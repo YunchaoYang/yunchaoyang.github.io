@@ -1,5 +1,5 @@
 <!-- ![Awesome Portfolio Website](./readme_assets/banner_apw.png) -->
-
+<!-- 
 <div align="center">
 <a href="https://github.com/smaranjitghose/awesome-portfolio-websites"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
 <a href="https://github.com/smaranjitghose/awesome-portfolio-websites"><img src="https://img.shields.io/badge/Built%20by-developers%20%3C%2F%3E-0059b3"></a>
@@ -14,23 +14,22 @@
 <a href="https://github.com/smaranjitghose/awesome-portfolio-websites/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed-raw/smaranjitghose/awesome-portfolio-websites?color=yellow"></a>
 <a href="https://github.com/smaranjitghose/awesome-portfolio-websites/pulls"><img src="https://img.shields.io/github/issues-pr/smaranjitghose/awesome-portfolio-websites?color=brightgreen"></a>
 <a href="https://github.com/smaranjitghose/awesome-portfolio-websites/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed-raw/smaranjitghose/awesome-portfolio-websites?color=0059b3"></a>
-</div>
-To add your image on the home page :
+</div> -->
 
-Add your image to assets -> images folder
-Open index.html
+1.  home page figure:
+
+1.1 Add your image to assets -> images folder
+
+2. Open index.html
 Change the <img src=""> to your image path
 To change the name on home page :
 
-Open index.html
 Change the name from John Doe to Your Name
 To change the interests displayed :
 
-Open index.html
 Inside span tag, change the data-words with your interests
 To add your social media links :
 
-Open index.html
 Inside <div class="social-icons"> fill up the link to your social media accounts inside href
   
 ### Home Page:
@@ -38,7 +37,3 @@ Inside <div class="social-icons"> fill up the link to your social media accounts
 ### Project Page:
 ### Research Page:
 ### Education Page:
-## How to use this?🛠
-
-[Check out our awesome Documentation](https://smaranjitghose.github.io/awesome-portfolio-websites/)
-
