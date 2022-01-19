@@ -1,3 +1,9 @@
+#### Home Page:
+#### Experience Page:
+#### Project Page:
+#### Research Page:
+#### Education Page:
+
 ## index page
 
 1. Add your image to assets -> images folder
@@ -14,14 +20,35 @@ To add your social media links :
 
 Inside <div class="social-icons"> fill up the link to your social media accounts inside href
 
-  
-## 
+## Navbar
 
-  ### Home Page:
-### Experience Page:
-### Project Page:
-### Research Page:
-### Education Page:
+To change the name :
+Open app.js
+Under let header, inside <a class="navbar-brand" href="index.html">, change the name from John Doe to Your Name
+
+## Footer
+To change the quote :
+
+Open app.js
+Go to let footer, inside <div class="container-fluid quote-container">, change the quote inside<p class="tag" > from "Develop a passion for learning. If you do, you will never cease to grow." to your quote
+To add your social media links :
+
+Open app.js
+Inside <div class="rounded-social-buttons tag">, under <a class="social-button" fill up the link to your social media accounts inside href="#" by replacing #. [ For example: <a class="social-button twitter" href="#" target="_blank"> Here, replace # with twitter account link]
+  
+  
+  Experience Page
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
 <!-- ![Awesome Portfolio Website](./readme_assets/banner_apw.png) -->
 <!-- 
