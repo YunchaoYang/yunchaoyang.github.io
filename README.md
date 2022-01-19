@@ -1,3 +1,28 @@
+## index page
+
+1. Add your image to assets -> images folder
+
+2. Open index.html
+Change the <img src=""> to your image path
+To change the name on home page :
+
+Change the name from John Doe to Your Name
+To change the interests displayed :
+
+Inside span tag, change the data-words with your interests
+To add your social media links :
+
+Inside <div class="social-icons"> fill up the link to your social media accounts inside href
+
+  
+## 
+
+  ### Home Page:
+### Experience Page:
+### Project Page:
+### Research Page:
+### Education Page:
+  
 <!-- ![Awesome Portfolio Website](./readme_assets/banner_apw.png) -->
 <!-- 
 <div align="center">
@@ -15,25 +40,3 @@
 <a href="https://github.com/smaranjitghose/awesome-portfolio-websites/pulls"><img src="https://img.shields.io/github/issues-pr/smaranjitghose/awesome-portfolio-websites?color=brightgreen"></a>
 <a href="https://github.com/smaranjitghose/awesome-portfolio-websites/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed-raw/smaranjitghose/awesome-portfolio-websites?color=0059b3"></a>
 </div> -->
-
-1.  home page figure:
-
-1.1 Add your image to assets -> images folder
-
-2. Open index.html
-Change the <img src=""> to your image path
-To change the name on home page :
-
-Change the name from John Doe to Your Name
-To change the interests displayed :
-
-Inside span tag, change the data-words with your interests
-To add your social media links :
-
-Inside <div class="social-icons"> fill up the link to your social media accounts inside href
-  
-### Home Page:
-### Experience Page:
-### Project Page:
-### Research Page:
-### Education Page:
