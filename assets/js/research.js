@@ -4,10 +4,10 @@ const researchTable = document.querySelector(".main");
 
 const research = [
     {
-        title : "A Batch Normalized Inference Network Keeps the KL Vanishing Away",
-        authors : "Qile Zhu, Wei Bi, Xiaojiang Liu, Xiyao Ma, Xiaolin Li and Dapeng Wu",
-        conferences : "The 58th Annual Meeting of the Association for Computational Linguistics",
-        researchYr : 2020,
+        title : "Super-lift coefficient of active flow control airfoil: What is the limit?",
+        authors : "Yang, Yunchao and Zha, Gecheng",
+        conferences : "55th AIAA Aerospace Sciences Meeting",
+        researchYr : 2017,
         citebox : "popup1",
         image : "assets/images/research-page/inteferenceNetwork.png",
         citation: {
@@ -15,6 +15,7 @@ const research = [
         },
         abstract: "This is currently left empty and this can be considered as a dummy data 1",
         absbox: "absPopup1"
+      
     },
 
     {
