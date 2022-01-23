@@ -104,6 +104,7 @@ let header = $(`
 
 $(document).ready(function () {
   // updating the color of the swiper bullets (initial update of color)
+  localStorage.setItem("lightMode", "dark");
   updateColorOfSwiperBullets(localStorage.getItem("lightMode"));
 });
 
