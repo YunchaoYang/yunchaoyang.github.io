@@ -1,43 +1,43 @@
 AOS.init();
 
-// MOOCs Cards
+// MOOCs / Certifications Cards
 
 const moocs = document.querySelector(".moocs");
 const moocscards = [
   {
-    title: "Machine Learning",
+    title: "DLI Instructor: Gen-AI With Diffusion Models",
     cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink: "https://www.coursera.org/browse/data-science",
+    moocLink: "https://www.nvidia.com/en-gb/training/instructor-directory/bio/?instructorId=0038Z00002o6ZHjQAM",
   },
   {
-    title: "Deep Learning Specialization",
+    title: "DLI Instructor: Model Parallel Neural Network Training",
     cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink: "https://www.coursera.org/specializations/deep-learning",
+    moocLink: "https://www.nvidia.com/en-gb/training/instructor-directory/bio/?instructorId=0038Z00002o6ZHjQAM",
   },
   {
-    title: "Web Development Bootcamp 2022",
-    cardImage: "assets/images/education-page/udemy.svg",
-    moocLink: "https://www.udemy.com/course/the-complete-web-development-bootcamp/",
-  },
-  {
-    title: "Intro to React",
-    cardImage: "assets/images/education-page/edx.svg",
-    moocLink: "https://www.edx.org/learn/reactjs",
-  },
-  {
-    title: "Intro to React Native",
+    title: "Build Transformer NLP Applications",
     cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink: "https://www.coursera.org/lecture/react-native/introduction-to-react-native-Eax0D",
+    moocLink: "https://courses.nvidia.com/certificates/88bf686daa8f47258f716ef55c3a4f6d/",
   },
   {
-    title: "NodeJS, Express and MongoDB",
+    title: "Efficient LLM Customization",
     cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink: "https://www.coursera.org/learn/server-side-nodejs",
+    moocLink: "https://learn.nvidia.com/certificates?id=Fq3BJ6LrTPihEXabxAHfGQ",
   },
   {
-    title: "Data Structures & Algorithms",
-    cardImage: "assets/images/education-page/udacity.svg",
-    moocLink: "https://www.udacity.com/course/data-structures-and-algorithms-nanodegree--nd256",
+    title: "Building RAG Agents with LLMs",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+S-FX-15+V1",
+  },
+  {
+    title: "Deploying RAG for Production at Scale",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://www.nvidia.com/en-us/on-demand/session/gtc24-dlit63054/",
+  },
+  {
+    title: "NVIDIA Instructor: CUDA Python",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://courses.nvidia.com/certificates/02a6f59d96ed43179dd0013b5bb3ad95/",
   },
 ];
 
@@ -76,7 +76,9 @@ function showExperience() {
       currentItem = 0;
     }
       const item = experience[currentItem];
-      img.src = item.img;
+      if (img && item) {
+        img.src = item.img;
+      }
       currentItem++;
 
     },
@@ -84,6 +86,7 @@ function showExperience() {
 }
 
 const showCards = () => {
+  if (!moocs) return;
   let output = "";
   moocscards.forEach(
     ({ title, cardImage, moocLink }) =>
@@ -107,43 +110,6 @@ const showCards = () => {
   moocs.innerHTML = output;
 };
 document.addEventListener("DOMContentLoaded", showCards);
-
-
-/* Badges*/
-
-const bagdes = document.querySelector(".badges");
-const badgesection = [
-  {
-    title: "Google Developer Essentials",
-    image: "assets/images/education-page/badge1.png",
-    description: "Earned May 20, 2020",
-  },
-  {
-    title: "VM Migration",
-    image: "assets/images/education-page/badge2.png",
-    description: "Earned June 20, 2020",
-  },
-  {
-    title: "G Suite Essentials",
-    image: "assets/images/education-page/badge3.png",
-    description: "Earned July 20, 2020",
-  },
-];
-
-const showCards1 = () => {
-  let output = "";
-  badgesection.forEach(
-    ({ title, image, description }) =>
-    (output += `       
-      <div class="col-lg-4 col-md-6 p-2" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="600"> 
-        <img class="img-fluid d-block mb-3 mx-auto hvr-grow" src="${image}" alt="Card image cap" width="200">
-          <div class="text-center font-weight-bolder" style="font-size: 1.3em;">${title}</div>
-          <div class="text-center text-muted font-weight-bolder p-2">${description}</div>
-      </div>`)
-  );
-  bagdes.innerHTML = output;
-};
-document.addEventListener("DOMContentLoaded", showCards1);
 
 
 /* Timeline Section*/

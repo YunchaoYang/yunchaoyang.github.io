@@ -1,30 +1,50 @@
 AOS.init();
 
-//  Work experience cards
-
+// Work experience cards
 
 const experiencecards = document.querySelector(".experience-cards");
 const exp = [
   {
+    title: "Research Engineer (contracted)",
+    cardImage: "assets/images/experience-page/experience.svg",
+    place: "Meta FAIR, Menlo Park, CA",
+    time: "(October 2025 – present)",
+    desp: "<li>Member of the fairseq2 team, focusing on AI foundation systems infrastructure—multi-GPU/multi-node pretraining, finetuning, post-training, sampling/serving, evaluation, and data pipelines for LLM workflows (Llama, OLMo, Qwen, Gemma).</li> <li>Lead AI inference infrastructure for Multi Spoken Debate Area: built a fast, scalable LLM generation engine on Ray clusters for model benchmarking, data processing, and synthetic data generation.</li> <li>Architected multimodal spoken-language-model inference with a multi-sidecar serving stack—Ray Serve orchestrating vLLM, vLLM-Omni, and PyTorch backends.</li> <li>Optimized distributed training for speech–text Llama models on H100/H200 clusters—profiled NCCL/FSDP bottlenecks and improved throughput via sharding, compiler, and batch-size tuning.</li> <li>Drove large-scale training optimization on NVIDIA GPU clusters through profiling-driven bottleneck elimination across communication, memory, and kernels; integrated fast-attention paths (e.g., FlashAttention) when profiling indicated attention-bound phases.</li>",
+  },
+  {
+    title: "NVIDIA DLI University Ambassador",
+    cardImage: "assets/images/experience-page/experience.svg",
+    place: "NVIDIA Deep Learning Institute, Gainesville, FL",
+    time: "(April 2022 – present)",
+    desp: "<li>Subject Matter Expert and Instructor: delivered NVIDIA DLI AI/ML training at GTC and instructor-led sessions across North America, emphasizing parallelism and accelerated GPU computing.</li> <li>Collaborate with the NVIDIA DLI team to design exams and certification programs.</li> <li>Certified Mentor: guided participants in NVIDIA Open GPU Hackathons on accelerated computing and parallel programming.</li>",
+  },
+  {
+    title: "Senior Research Software Engineer",
+    cardImage: "assets/images/experience-page/experience.svg",
+    place: "University of Florida, Gainesville, FL",
+    time: "(February 2022 – October 2025)",
+    desp: "<li>Led technical efforts for the AI&RSE team at UF Research Computing across Gen-AI, NLP/LLM, computer vision, medical/healthcare, and business intelligence.</li> <li>Benchmarked large-scale LLM inference across vLLM, NVIDIA NIM (Triton, TensorRT), and Hugging Face TGI—analyzing latency, throughput, scalability, and reliability.</li> <li>Optimized multi-GPU inference runtimes: GPU memory bottlenecks, kernel scheduling, KV-cache usage, and communication overhead.</li> <li>Improved multi-node GPU scaling through topology-aware tuning of communication–computation imbalance.</li> <li>Orchestrated containerized AI deployments; deployed NVIDIA NIM generative-AI inference microservices on the UF HiPerGator-AI cluster.</li>",
+  },
+  {
     title: "Software Development Engineer",
-    cardImage: "assets/images/experience-page/flipkart.jpg",
-    place: "Philips, Gainesville FL",
-    time: "(July, 2020 - Dec 2021)",
-    desp: "<li>Built an object-oriented Restful cloud service application for radiation oncology therapy planning system</li> <li> Designed and established a webserver with restful API service in C++, built and deploy the client and server-side testing cases;   </li> <li>  Implemented a JSON-based library for DICOM file interpreter </li>",
+    cardImage: "assets/images/experience-page/experience.svg",
+    place: "Philips, Gainesville, FL",
+    time: "(July 2020 – December 2021)",
+    desp: "<li>Built an object-oriented RESTful cloud service for a radiation oncology therapy planning system.</li> <li>Designed and established a C++ webserver with RESTful API service; built and deployed client and server-side tests.</li> <li>Agile development of a JSON-based library for DICOM data in C++.</li> <li>Tech stack: Python/C++ hybrid programming, CMake, RESTful services, Docker, Linux, and Jenkins.</li>",
   },
   {
-    title: "Research Associate",
-    cardImage: "assets/images/experience-page/gsoc.png",
-    place: "University of Florida, Gainesville FL",
-    time: "(July 2018 - June, 2020)",
-    desp: "<li></li><li> </li><li></li>",
+    title: "PostDoc Research Associate",
+    cardImage: "assets/images/experience-page/experience.svg",
+    place: "University of Florida, Gainesville, FL",
+    time: "(July 2018 – June 2020)",
+    desp: "<li>HPC: Developed a highly scalable parallel algorithm for multi-physics simulation based on MPI, scaling up to 1,000,000 CPUs (Journal of Supercomputing).</li> <li>AI: Physics-informed machine learning for multiphase flow prediction using GANs, reducing computation time from 500 hours to seconds (~1M× speed-up) (Theoretical and Computational Fluid Dynamics).</li>",
   },
   {
-    title: "Research Assistant",
-    cardImage: "assets/images/experience-page/IIT_Bombay.jpg",
-    place: "University of Miami, Coral Gables FL",
-    time: "(August,2013  - May, 2018)",
-    desp:"<li>Worked on the project “LTI (Learning Tools Interoperability) 2.0 standards Implementation for ekShiksha.</li><li>Designed a software that would help faculty to create a quiz using the questions from the database based on his/her choice of topics and he should be provided with various facilities and options to create a quiz of his choice.</li>",
+    title: "Research Assistant (PhD student)",
+    cardImage: "assets/images/experience-page/experience.svg",
+    place: "University of Miami, Coral Gables, FL",
+    time: "(August 2013 – May 2018)",
+    desp: "<li>HPC/CFD: Hybrid turbulence modeling for computational fluid dynamics with MPI parallelism in Aerospace Engineering.</li>",
   },
 ];
 
@@ -57,175 +77,3 @@ const showCards2 = () => {
   experiencecards.innerHTML = output;
 };
 document.addEventListener("DOMContentLoaded", showCards2);
-
-
-// Volunteership Cards
-
-const volunteership = document.querySelector(".volunteership");
-const volunteershipcards = [
-  {
-    title: "GirlScript Summer Of Code 2020",
-    cardImage: "assets/images/experience-page/1.jpg",
-    description:
-      "Responsible for handling the projects GirlScript App and GirlScript Website Boilerplate.",
-  },
-  {
-    title: "StudentCode-in 2020",
-    cardImage: "assets/images/experience-page/2.jpg",
-    description:
-      "Responsible for handling open source contributions for the project Awesome Developer Portfolio.",
-  },
-  {
-    title: "PClub Summer Of Code 2020",
-    cardImage: "assets/images/experience-page/3.jpg",
-    description:
-      "Mentoring for the projects Deep Pixel, AutoVaidya, Just Resume and Doc2pen.",
-  },
-  {
-    title: "Hakin-Codes",
-    cardImage: "assets/images/experience-page/4.jpg",
-    description:
-      "Mentoring for the open source projects Deeppixel, Awesome Developer Portfolios and Doc2Pen.",
-  },
-];
-
-const showCards = () => {
-  let output = "";
-  volunteershipcards.forEach(
-    ({ title, cardImage, description }) =>
-      (output += `        
-      <div class="card volunteerCard" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="600" style="height: 550px;width:400px">
-      
-      <img src="${cardImage}" height="250" width="65" class="card-img" style="border-radius:10px">
-      <div class="content">
-          <h2 class="volunteerTitle">${title}</h2><br>
-          <p class="copy">${description}</p></div>
-      
-      </div>
-      `)
-  );
-  volunteership.innerHTML = output;
-};
-document.addEventListener("DOMContentLoaded", showCards);
-
-
-// Hackathon Section
-
-
-const hackathonsection = document.querySelector(".hackathon-section");
-const mentor = [
-  {
-    title: "The Uplift Project",
-    subtitle: "Mentor",
-    image: "assets/images/experience-page/uplift.png",
-    desp: "I would be responsible for guiding 100s of participants across the globe in their first steps towards Applied Data Science and building end-to-end machine learning projects.",
-  },
-  {
-    title: "ULHacks",
-    subtitle: "Judge",
-    image: "assets/images/experience-page/ulhacks.png",
-    desp: "ULHacks is a 36 hour long hackathon organized with an aim to enable students to create a project which empowers learning.",
-  },
-  {
-    title: "WaffleHacks",
-    subtitle: "Judge",
-    image: "assets/images/experience-page/wafflehacks.png",
-    desp: "WaffleHacks 2021 is an upcoming 48-hour student-organized hackathon with an aim to bring technical solutions to local communities and small businesses.",
-  },
-  {
-    title: "Elevate Tech",
-    subtitle: "Judge",
-    image: "assets/images/experience-page/elevate.png",
-    desp: "Elevate Hacks is an upcoming all-female virtual hackathon coming from AUGUST 14th to 15th.",
-  },
-  {
-    title: "PitchTeen",
-    subtitle: "Judge",
-    image: "assets/images/experience-page/pitchteen.png",
-    desp: "PitchTeen 2.0 was a tech startup competition for female and non-binary communities in high school and college from all over the world with an aim to create a safe and encouraging place for women to help them explore tech and business fields.",
-  },
-  {
-    title: "Hack-A-Solution",
-    subtitle: "Judge",
-    image: "assets/images/experience-page/hackasolution.png",
-    desp: "Hack-a-Solution 2021 is a 24 hour long hackathon organized by Frisco students to raise awareness of world issues through technology.",
-  },
-  {
-    title: "UniGlobe Hacks",
-    subtitle: "Judge",
-    image: "assets/images/experience-page/uniglobe.png",
-    desp: "UniGlobe Hacks 2.0 is an upcoming 4-day long hackathon run by high school students held during 28-31 July 2021.",
-  },
-  {
-    title: "AtlasHacks",
-    subtitle: "Mentor",
-    image: "assets/images/experience-page/atlas.png",
-    desp: "AtlasHacks II is a 3-day virtual hackathon that aims to foster creativity within hackers all around the world.",
-  },
-  {
-    title: "NeoHacks",
-    subtitle: "Judge",
-    image: "assets/images/experience-page/neo.png",
-    desp: "NeoHacks is an upcoming 48-hour hackathon taking place July 23-25, 2021 where hundreds of students from around the world will come together virtually to learn new skills, meet new friends, and build awesome projects. We provide beginner-friendly workshops, mentorship, fun games, and more.",
-  },
-  {
-    title: "Mission Inspired",
-    subtitle: "Judge",
-    image: "assets/images/experience-page/mission.png",
-    desp: "InspireEd Hacks is a nationwide initiative organized by the student-for-student nonprofit, Mission InspirEd, challenging students ages 10-18 to synthesize their creativity and coding experience into a product beneficial to the educational community.",
-  },
-  {
-    title: "Hack3",
-    subtitle: "Judge",
-    image: "assets/images/experience-page/hack3.png",
-    desp: "Hack3 2021 is an upcoming global online hackathon that aims to enable high school students to learn computer science, with a broader message of (everyone can code) targeting underrepresented demographics to improve diversity and inclusion of individuals in the computer technology space.",
-  },
-  {
-    title: "JITHack",
-    subtitle: "Mentor",
-    image: "assets/images/experience-page/jithack.png",
-    desp: "JITHack is an upcoming virtual design and development hackathon organized by the students of Jyothy Institute of Technology, Bengaluru on June 26, 2021, where participants have 24 hours to build something incredible.",
-  },
-  {
-    title: "Recess Hacks",
-    subtitle: "Mentor",
-    image: "assets/images/experience-page/recess.png",
-    desp: "Recess Hacks is an upcoming hackathon for high school students in the Greater Toronto Area that strives to encourage innovation among high school students and get involved in technology.",
-  },
-  {
-    title: "Citro Tech",
-    subtitle: "Mentor",
-    image: "assets/images/experience-page/citro.png",
-    desp: "Citro Hacks 2021 is an upcoming all-inclusive online hackathon organized by Citro Tech, a student led organization dedicated to empowering minorities in the tech field</li>",
-  },
-  {
-    title: "NHacks",
-    subtitle: "Judge",
-    image: "assets/images/experience-page/nhacks.png",
-    desp: "NHacks VI was a hackathon that aimed to encourage students everywhere to develop skills in computer science by creating tangible products that they're proud of. It initially started as Michigan's largest high school hackathon.",
-  }
-  
-
-];
-
-const showCards3 = () => {
-  let output = "";
-  mentor.forEach(
-    ({ title, image, subtitle, desp}) =>
-      (output += `  
-      <div class="blog-slider__item swiper-slide">
-        <div class="blog-slider__img">
-            <img src="${image}" alt="">
-        </div>
-        <div class="blog-slider__content">
-          <div class="blog-slider__title">${title}</div>
-          <span class="blog-slider__code">${subtitle}</span>
-          <div class="blog-slider__text">${desp}</div>
-          <a href="#" class="blog-slider__button">Read More</a>   
-        </div>
-      </div>
-      `)
-  );
-  hackathonsection.innerHTML = output;
-};
-document.addEventListener("DOMContentLoaded", showCards3);
