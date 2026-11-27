@@ -5,39 +5,109 @@ AOS.init();
 const moocs = document.querySelector(".moocs");
 const moocscards = [
   {
-    title: "DLI Instructor: Gen-AI With Diffusion Models",
+    title: "DLI Instructor: Gen-AI with Diffusion Models \u00b7 2024",
     cardImage: "assets/images/education-page/coursera2.svg",
     moocLink: "https://www.nvidia.com/en-gb/training/instructor-directory/bio/?instructorId=0038Z00002o6ZHjQAM",
   },
   {
-    title: "DLI Instructor: Model Parallel Neural Network Training",
+    title: "DLI Instructor: Model Parallel Neural Network Training \u00b7 2023",
     cardImage: "assets/images/education-page/coursera2.svg",
     moocLink: "https://www.nvidia.com/en-gb/training/instructor-directory/bio/?instructorId=0038Z00002o6ZHjQAM",
   },
   {
-    title: "Build Transformer NLP Applications",
+    title: "DLI Instructor: Accelerated Computing with CUDA Python \u00b7 2022",
     cardImage: "assets/images/education-page/coursera2.svg",
-    moocLink: "https://courses.nvidia.com/certificates/88bf686daa8f47258f716ef55c3a4f6d/",
+    moocLink: "https://courses.nvidia.com/certificates/f64fa074503c4b99aab10a1eebad171a/",
   },
   {
-    title: "Efficient LLM Customization",
+    title: "DLI Instructor: Fundamentals of Deep Learning \u00b7 2022",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://learn.next.courses.nvidia.com/certificates/91a9c53b1eac4651b4c3758feca55ccd",
+  },
+  {
+    title: "Accelerating CUDA C++ Applications with Multiple GPUs \u00b7 2024",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://learn.nvidia.com/certificates?id=rMvu22ItTPCTKDST0t3b2Q",
+  },
+  {
+    title: "Efficient LLM Customization \u00b7 2024",
     cardImage: "assets/images/education-page/coursera2.svg",
     moocLink: "https://learn.nvidia.com/certificates?id=Fq3BJ6LrTPihEXabxAHfGQ",
   },
   {
-    title: "Building RAG Agents with LLMs",
+    title: "Generative AI with Diffusion Models \u00b7 2024",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://courses.nvidia.com/certificates/42624eef58354adbb9cc6ef6fdfb3e64/",
+  },
+  {
+    title: "Building RAG Agents with LLMs \u00b7 2024",
     cardImage: "assets/images/education-page/coursera2.svg",
     moocLink: "https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+S-FX-15+V1",
   },
   {
-    title: "Deploying RAG for Production at Scale",
+    title: "Deploying RAG for Production at Scale \u00b7 2024",
     cardImage: "assets/images/education-page/coursera2.svg",
     moocLink: "https://www.nvidia.com/en-us/on-demand/session/gtc24-dlit63054/",
   },
   {
-    title: "NVIDIA Instructor: CUDA Python",
+    title: "Model Parallelism: Building and Deploying Large Neural Networks \u00b7 2023",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://courses.nvidia.com/certificates/6d7c1cc30163485b980faa90c5d6d392/",
+  },
+  {
+    title: "Data Parallelism: Training on Multiple GPUs \u00b7 2023",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://courses.nvidia.com/certificates/6fcf586069d34982b3977399a5bc12fb/",
+  },
+  {
+    title: "Video AI Applications at the Edge on Jetson Nano \u00b7 2023",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://courses.nvidia.com/certificates/7f85d97d17ba433a8396dde26aa78590/",
+  },
+  {
+    title: "Computer Vision for Industrial Inspection \u00b7 2022",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://courses.nvidia.com/certificates/399fd544e363463ab3ab541287a4ec56/",
+  },
+  {
+    title: "Accelerated Computing with CUDA C/C++ \u00b7 2022",
     cardImage: "assets/images/education-page/coursera2.svg",
     moocLink: "https://courses.nvidia.com/certificates/02a6f59d96ed43179dd0013b5bb3ad95/",
+  },
+  {
+    title: "Building Transformer-Based NLP Applications \u00b7 2022",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://courses.nvidia.com/certificates/88bf686daa8f47258f716ef55c3a4f6d/",
+  },
+  {
+    title: "Applications of AI for Anomaly Detection \u00b7 2022",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://courses.nvidia.com/certificates/1aba0d9e7d0d4614b0eb167ba5512806/",
+  },
+  {
+    title: "Accelerated Computing with CUDA Python \u00b7 2022",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://courses.nvidia.com/certificates/c4d98f5237de402e932734fdd9fb3af1/",
+  },
+  {
+    title: "Getting Started with Deep Learning \u00b7 2022",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://courses.nvidia.com/certificates/83a6f9efc3764c32b34c83b5c422a6ab/",
+  },
+  {
+    title: "Coursera: Deep Learning Specialization \u00b7 2018",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://www.coursera.org/account/accomplishments/specialization/FAENCM3YT5QZ",
+  },
+  {
+    title: "Coursera: Python for Everybody Specialization \u00b7 2017",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://www.coursera.org/account/accomplishments/specialization/7JYFFYF37ADS",
+  },
+  {
+    title: "Coursera: Machine Learning \u00b7 2016",
+    cardImage: "assets/images/education-page/coursera2.svg",
+    moocLink: "https://www.coursera.org/account/accomplishments/verify/VDHPQRQDYK7S",
   },
 ];
 
