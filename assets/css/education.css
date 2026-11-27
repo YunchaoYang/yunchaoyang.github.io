@@ -662,3 +662,11 @@ html[light-mode="dark"] .cert-logo {
   background: #0056d2;
 }
 
+/* Keep the template's absolutely positioned hero column inside the viewport on phones */
+@media (max-width: 767px) {
+  .godown {
+    left: 0 !important;
+    right: 0 !important;
+    width: auto !important;
+  }
+}
