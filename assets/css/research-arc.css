@@ -1,0 +1,142 @@
+/* Research arc (Gantt-style focus timeline) and publication tweaks */
+:root {
+  --arc-text: #2b2f3a;
+  --arc-muted: #8a8f9c;
+  --arc-track: #eceef3;
+}
+html[light-mode="dark"] {
+  --arc-text: #eef0f5;
+  --arc-muted: #9ba0ad;
+  --arc-track: #333333;
+}
+
+.research-intro {
+  max-width: 1000px;
+  padding: 0 16px;
+}
+.arc-sub {
+  color: var(--arc-muted);
+  margin-bottom: 1.5rem;
+}
+.research-arc {
+  position: relative;
+  padding-top: 26px;
+}
+.arc-axis {
+  position: absolute;
+  top: 0;
+  left: 38%;
+  right: 0;
+  height: 20px;
+  font-size: 0.75rem;
+  color: var(--arc-muted);
+}
+.arc-axis span {
+  position: absolute;
+  transform: translateX(-50%);
+}
+.arc-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.arc-label {
+  flex: 0 0 calc(38% - 12px);
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--arc-text);
+  line-height: 1.25;
+}
+.arc-label small {
+  display: block;
+  color: var(--arc-muted);
+  font-size: 0.75rem;
+}
+.arc-track {
+  position: relative;
+  flex: 1;
+  height: 18px;
+  border-radius: 9px;
+  background: var(--arc-track);
+}
+.arc-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--l);
+  width: 0;
+  border-radius: 9px;
+  background: var(--c);
+  transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--d);
+}
+.research-arc.arc-in .arc-bar {
+  width: var(--w);
+}
+
+.scholar-row {
+  margin: 1.75rem 0 0.5rem;
+}
+.scholar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid #4285f4;
+  color: #4285f4;
+  font-weight: 600;
+}
+.scholar-btn:hover {
+  background: #4285f4;
+  color: #fff;
+  text-decoration: none;
+}
+.pub-head {
+  margin-top: 3rem;
+}
+.rAuthors {
+  font-size: 0.9rem;
+}
+.rButtons {
+  gap: 10px;
+  margin-top: 8px;
+}
+.rButtons a.button {
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .arc-axis {
+    left: 0;
+  }
+  .arc-axis span:nth-child(even) {
+    display: none;
+  }
+  .arc-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+  .arc-label {
+    flex: none;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-bar {
+    transition: none;
+  }
+}
+
+/* The template fixes every <section> to a viewport height; let the research hero size to its content. */
+.research-upper section.txt-bottom {
+  height: auto !important;
+  padding-bottom: 2rem;
+}
+
+.rAuthors b {
+  font-weight: 600;
+  color: #ff8489;
+}

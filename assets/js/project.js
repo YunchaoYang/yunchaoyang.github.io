@@ -1,59 +1,203 @@
 AOS.init();
-/* Project Cards */
 
-const projectcards = document.querySelector(".projectcards");
+// Project cards. Each project's `cats` drives the filter chips; `links` render as buttons.
+const D = "assets/images/project-page/diagrams/";
 
-// Cleared template projects — real projects can be added here later
-const projects = [];
+const projectCategories = [
+  { id: "all", label: "All" },
+  { id: "agentic", label: "Agentic AI" },
+  { id: "infra", label: "AI Infrastructure" },
+  { id: "training", label: "Distributed Training" },
+  { id: "hpc", label: "HPC & GPU Computing" },
+  { id: "software", label: "Software" },
+];
 
-const showCards = () => {
-  if (!projectcards) return;
-  let output = "";
-  projects.forEach(
-    ({ title, cardImage, Previewlink, Githublink }) => {
-      (output += `       
-        <div class="column skill-card card" style="margin: 15px"data-aos="zoom-in-up" data-aos-easing="linear" data-aos-delay="300" data-aos-duration="600" >
-          <div class="wrapper" style="background: url(${cardImage}) center / cover no-repeat;">
-            <div class="header">
-            </div>
-            <div class="data">
-              <div class="content">
-              <div class="title-div">
-                <h1 class="title"><a href="#">${title}</a></h1>
-                </div>
-            <ul class="menu-content"><br>
-                  <li><a href="${Previewlink}" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 30 28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></a></li>
-                  <li><a href="${Githublink}" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 30 28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>`
-      )
-    }
-  );
-  projectcards.innerHTML = output;
-};
-document.addEventListener("DOMContentLoaded", showCards);
+const projects = [
+  {
+    title: "Speech-LLM Debate Arena",
+    org: "Meta FAIR",
+    year: "2026",
+    image: D + "debate-arena.svg",
+    cats: ["agentic", "infra"],
+    summary:
+      "A multi-agent arena where speech language models debate each other and a judge model scores every round, turning the matches into evaluation benchmarks. Runs distributed on Ray using the Matrix framework.",
+    tags: ["Multi-agent LLMs", "Speech LLMs", "Ray", "Evaluation"],
+    links: [],
+  },
+  {
+    title: "LLM Generation Engine & Multimodal Serving",
+    org: "Meta FAIR",
+    year: "2025–2026",
+    image: D + "generation-engine.svg",
+    cats: ["infra"],
+    summary:
+      "A fast, scalable generation engine on Ray clusters that researchers use for benchmarking, data processing and synthetic data. A multi-sidecar design on Ray Serve runs vLLM, vLLM-Omni and PyTorch backends side by side for spoken-language models.",
+    tags: ["Ray Serve", "vLLM", "vLLM-Omni", "PyTorch"],
+    links: [],
+  },
+  {
+    title: "GRPO Reinforcement Learning in fairseq2",
+    org: "Meta FAIR",
+    year: "2025–2026",
+    image: D + "grpo.svg",
+    cats: ["training", "infra"],
+    summary:
+      "Infrastructure for GRPO post-training in fairseq2: tensor-parallel policy execution, multiple concurrent samplers and multi-GPU orchestration, then profiling and tuning to raise RL and SFT training throughput.",
+    tags: ["GRPO", "RL / SFT", "Tensor parallel", "fairseq2"],
+    links: [{ label: "fairseq2", url: "https://github.com/facebookresearch/fairseq2", icon: "fab fa-github" }],
+  },
+  {
+    title: "Scaling LLM Training on H100 / H200",
+    org: "Meta FAIR",
+    year: "2025",
+    image: D + "training-scale.svg",
+    cats: ["training", "hpc"],
+    summary:
+      "Profiled NCCL and FSDP communication for speech-text Llama training, then raised throughput by overlapping communication with compute and tuning sharding strategy, compiler settings, batch size and FlashAttention paths.",
+    tags: ["FSDP", "NCCL", "torch.compile", "FlashAttention"],
+    links: [],
+  },
+  {
+    title: "LLM Inference Benchmarking & NIM Services",
+    org: "University of Florida",
+    year: "2024–2025",
+    image: D + "inference-bench.svg",
+    cats: ["infra", "hpc"],
+    summary:
+      "Compared vLLM, NVIDIA NIM (Triton, TensorRT) and Hugging Face TGI on latency, throughput, scalability and reliability, fixed GPU memory and KV-cache bottlenecks, and deployed NIM inference microservices on the HiPerGator-AI supercomputer.",
+    tags: ["vLLM", "NVIDIA NIM", "TensorRT", "Containers"],
+    links: [],
+  },
+  {
+    title: "BrainSegFounder: 3D Foundation Model",
+    org: "University of Florida",
+    year: "2024",
+    image: D + "brainsegfounder.svg",
+    cats: ["training", "hpc"],
+    summary:
+      "Scaled self-supervised pre-training of a 3D neuroimaging foundation model to 128 GPUs on HiPerGator. Published in Medical Image Analysis.",
+    tags: ["PyTorch DDP", "128 GPUs", "Medical imaging"],
+    links: [{ label: "Paper", url: "https://doi.org/10.1016/j.media.2024.103301", icon: "fas fa-file-alt" }],
+  },
+  {
+    title: "Teaching GPU Computing with NVIDIA DLI",
+    org: "NVIDIA Deep Learning Institute",
+    year: "2022–present",
+    image: D + "dli-teaching.svg",
+    cats: ["hpc"],
+    summary:
+      "Certified instructor for CUDA Python, deep learning, model-parallel training and generative AI with diffusion models. Teaches at GTC and workshops across North America and mentors teams at Open GPU Hackathons.",
+    tags: ["CUDA", "Model parallelism", "Diffusion models"],
+    links: [
+      {
+        label: "Instructor profile",
+        url: "https://www.nvidia.com/en-gb/training/instructor-directory/bio/?instructorId=0038Z00002o6ZHjQAM",
+        icon: "fas fa-chalkboard-teacher",
+      },
+    ],
+  },
+  {
+    title: "Physics-Informed GAN for Multiphase Flow",
+    org: "University of Florida",
+    year: "2021",
+    image: D + "physics-gan.svg",
+    cats: ["hpc"],
+    summary:
+      "Generative adversarial networks that learn particle-laden flow fields from direct numerical simulation, cutting a 500-hour simulation to seconds, roughly a 1,000,000× speedup.",
+    tags: ["GANs", "Scientific ML", "CFD"],
+    links: [{ label: "Paper", url: "https://doi.org/10.1007/s00162-021-00593-9", icon: "fas fa-file-alt" }],
+  },
+  {
+    title: "Immersed Boundary Solver on 1M CPU Cores",
+    org: "University of Florida",
+    year: "2018–2021",
+    image: D + "immersed-boundary.svg",
+    cats: ["hpc"],
+    summary:
+      "A scalable parallel algorithm for the direct-forcing immersed boundary method on high-order spectral elements, used for multiphase flows such as blood flow and sediment transport. Scales to 1,000,000 CPU cores with MPI.",
+    tags: ["MPI", "Spectral elements", "Supercomputing"],
+    links: [{ label: "Paper", url: "https://doi.org/10.1007/s11227-020-03371-2", icon: "fas fa-file-alt" }],
+  },
+  {
+    title: "Radiation-Oncology Planning Service",
+    org: "Philips",
+    year: "2020–2021",
+    image: D + "oncology-service.svg",
+    cats: ["software"],
+    summary:
+      "An object-oriented RESTful cloud service for a radiation-oncology treatment-planning system: a C++ web server and API for dose computation, a JSON library for DICOM data, and client and server test suites.",
+    tags: ["C++", "REST", "DICOM", "Docker", "Jenkins"],
+    links: [],
+  },
+  {
+    title: "Co-Flow Jet Airfoils: The Super-Lift Limit",
+    org: "University of Miami",
+    year: "2013–2018",
+    image: D + "coflow-jet.svg",
+    cats: ["hpc"],
+    summary:
+      "PhD research on active flow control. Used high-fidelity, MPI-parallel CFD (including IDDES) to find how far co-flow jet airfoils and finite-span wings can push the maximum lift coefficient.",
+    tags: ["CFD", "MPI", "Turbulence modeling"],
+    links: [{ label: "AIAA paper", url: "https://doi.org/10.2514/6.2017-1693", icon: "fas fa-file-alt" }],
+  },
+];
 
-function myFunction() {
-  var input, button, i, skillcard, card, title;
-  input = document.getElementById("myInput").value;
-  input = input.toUpperCase();
-  skillcard = document.getElementsByClassName("skill-card");
-  card = document.getElementsByClassName("card");
-  title = document.getElementsByClassName("title");
+const escapeHtml = (s) =>
+  String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
-  for (i = 0; i < button.length; i++) {
-    if (
-      button[i].innerHTML.toUpperCase().includes(input) ||
-      title[i].innerHTML.toUpperCase().includes(input)
-    ) {
-      skillcard[i].style.display = "";
-      card[i].style.display = "";
-    } else {
-      skillcard[i].style.display = "none";
-      card[i].style.display = "none";
-    }
-  }
+function renderProjectFilters(active) {
+  const bar = document.querySelector(".project-filters");
+  if (!bar) return;
+  bar.innerHTML = projectCategories
+    .map(
+      (c) =>
+        `<button type="button" class="pf-chip${c.id === active ? " is-active" : ""}" data-cat="${c.id}" aria-pressed="${c.id === active}">${c.label}</button>`
+    )
+    .join("");
 }
+
+function renderProjects(active) {
+  const grid = document.querySelector(".projectcards");
+  if (!grid) return;
+  const list = active === "all" ? projects : projects.filter((p) => p.cats.includes(active));
+  grid.innerHTML = list
+    .map(
+      (p, i) => `
+    <article class="pj-card" data-aos="fade-up" data-aos-delay="${(i % 3) * 80}">
+      <div class="pj-media"><img src="${p.image}" alt="" loading="lazy"></div>
+      <div class="pj-body">
+        <p class="pj-meta">${escapeHtml(p.org)} · ${escapeHtml(p.year)}</p>
+        <h3 class="pj-title">${escapeHtml(p.title)}</h3>
+        <p class="pj-summary">${escapeHtml(p.summary)}</p>
+        <ul class="pj-tags">${p.tags.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>
+        ${
+          p.links.length
+            ? `<div class="pj-links">${p.links
+                .map(
+                  (l) =>
+                    `<a href="${l.url}" target="_blank" rel="noopener"><i class="${l.icon}" aria-hidden="true"></i> ${escapeHtml(l.label)}</a>`
+                )
+                .join("")}</div>`
+            : ""
+        }
+      </div>
+    </article>`
+    )
+    .join("");
+  if (window.AOS) AOS.refreshHard();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  let active = "all";
+  renderProjectFilters(active);
+  renderProjects(active);
+  const bar = document.querySelector(".project-filters");
+  if (bar)
+    bar.addEventListener("click", (e) => {
+      const btn = e.target.closest(".pf-chip");
+      if (!btn) return;
+      active = btn.dataset.cat;
+      renderProjectFilters(active);
+      renderProjects(active);
+    });
+});

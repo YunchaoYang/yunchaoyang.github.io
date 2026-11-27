@@ -988,3 +988,50 @@ form {
     -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
     -khtml-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
 }
+
+/* Footer contact links (replaces the template's third-party contact form) */
+.contact-links .contact-blurb {
+  color: #c9c9cf;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1rem;
+}
+.contact-links .contact-link {
+  display: block;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: #f3f3f6;
+  color: #2b2a2a;
+  font-weight: 600;
+}
+.contact-links .contact-link:hover {
+  background: #ff8489;
+  color: #fff;
+  text-decoration: none;
+}
+.contact-links .ci {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  vertical-align: -3px;
+  border-radius: 3px;
+}
+.contact-links .ci-linkedin {
+  background: #0a66c2;
+  color: #fff;
+  font: 700 11px/18px Arial, sans-serif;
+  text-align: center;
+}
+.contact-links .ci-github,
+.contact-links .ci-scholar {
+  background: currentColor;
+  -webkit-mask: var(--ci) center / contain no-repeat;
+  mask: var(--ci) center / contain no-repeat;
+}
+.contact-links .ci-github {
+  --ci: url("https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/github.svg");
+}
+.contact-links .ci-scholar {
+  --ci: url("https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/googlescholar.svg");
+}

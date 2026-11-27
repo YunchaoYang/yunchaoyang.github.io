@@ -21,7 +21,7 @@
     },
     {
       year: "2024",
-      range: "Apr 2024 – Dec 2025",
+      range: "Apr 2024 – Oct 2025",
       title: "Senior Software Engineer, Research Development",
       place: "University of Florida Research Computing · Gainesville, FL",
       text: "LLM inference microservices (NIM, vLLM, Triton, TensorRT); scaled a medical-imaging foundation model to 128 GPUs.",

@@ -635,3 +635,30 @@ blockquote {
       font-weight: bold;
     }
   }
+
+/* Brand tiles for certification cards (icons from simple-icons, CC0) */
+.cert-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  background: #fff;
+}
+html[light-mode="dark"] .cert-logo {
+  background: #1d1d1d;
+}
+.cert-mark {
+  width: 64px;
+  height: 64px;
+  -webkit-mask: var(--cert-icon) center / contain no-repeat;
+  mask: var(--cert-icon) center / contain no-repeat;
+}
+.cert-nvidia .cert-mark {
+  --cert-icon: url("https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/nvidia.svg");
+  background: #76b900;
+}
+.cert-coursera .cert-mark {
+  --cert-icon: url("https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/coursera.svg");
+  background: #0056d2;
+}
+

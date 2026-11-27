@@ -29,7 +29,7 @@ const exp = [
     title: "Senior Software Engineer, Research Development",
     cardImage: "assets/images/experience-page/experience.svg",
     place: "University of Florida Research Computing, Gainesville, FL",
-    time: "(April 2024 – December 2025)",
+    time: "(April 2024 – October 2025)",
     desp: "<li><b>Technical lead, AI &amp; RSE team:</b> Set architecture direction for research software across generative AI, NLP/LLMs, computer vision, healthcare, and business intelligence.</li> <li><b>LLM inference services:</b> Deployed LLM inference microservices with NVIDIA NIM, vLLM, Triton, NeMo, and TensorRT on the HiPerGator-AI supercomputer for campus-wide research use.</li> <li><b>Benchmarking and optimization:</b> Compared vLLM, NIM, and Hugging Face TGI on latency, throughput, scalability, and reliability. Tracked down GPU memory pressure, kernel-scheduling gaps, KV-cache usage, and communication overhead, and fixed multi-node scaling with topology-aware tuning.</li> <li><b>Medical-imaging foundation model:</b> Scaled pre-training of a 3D neuroimaging foundation model to 128 GPUs (BrainSegFounder, <i>Medical Image Analysis</i>, 2024).</li>",
   },
   {
